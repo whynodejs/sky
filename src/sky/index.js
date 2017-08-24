@@ -1,4 +1,5 @@
 import Button from './components/Button'
+import './styles/index.less'
 
 let sky = {
   Button
