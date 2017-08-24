@@ -1,5 +1,5 @@
 <template>
-  <button @click='handleClick'>
+  <button @click='handleClick' class='sky-ui-button'>
     <slot>按钮</slot>
   </button>
 </template>
