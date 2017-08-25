@@ -2,13 +2,71 @@
   color: #fff;
   font-size: 1em;
   cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 1px solid #28bf2d;
-  background-color: #28bf2d;
-  outline: none; // 去除按钮点击时的边框
-  &:hover{
-    border: 1px solid #54dc59;
-    background-color: #54dc59;
+  // primary
+  &-primary{
+    border: 1px solid @primary;
+    background-color: @primary;
+    &:hover{
+      border: 1px solid @primary-hover;
+      background-color: @primary-hover;
+    }
   }
+  // success
+  &-success{
+    border: 1px solid @success;
+    background-color: @success;
+    &:hover{
+      border: 1px solid @success-hover;
+      background-color: @success-hover;
+    }
+  }
+  // warning
+  &-warning{
+    border: 1px solid @warning;
+    background-color: @warning;
+    &:hover{
+      border: 1px solid @warning-hover;
+      background-color: @warning-hover;
+    }
+  }
+  // error
+  &-error{
+    border: 1px solid @error;
+    background-color: @error;
+    &:hover{
+      border: 1px solid @error-hover;
+      background-color: @error-hover;
+    }
+  }
+  &-dashed{
+    color: #777575;
+    border: 1px dashed @text;
+    background-color: @text;
+    &:hover{
+      border-color: black;
+    }
+  }
+  &-disabled{
+    color: #aba8a8;
+    cursor: not-allowed;
+    border: 1px solid @text-border;
+    background-color: @text;
+  }
+  // text
+  // disabled
+  &-lg{
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  &-md{
+    font-size: 0.9em;
+    padding: 7px 10px;
+    border-radius: 3px;
+  }
+  &-sm{
+    font-size: 0.7em;
+    padding: 5px 7px;
+    border-radius: 2px;
+  }
+  outline: none; // 去除按钮点击时的边框
 }
