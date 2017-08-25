@@ -1,8 +1,10 @@
 import Button from './components/Button'
+import Icon from './components/Icon'
 import './styles/index.less'
 
 let sky = {
-  Button
+  Button,
+  Icon
 }
 
 const install = function (Vue) {
