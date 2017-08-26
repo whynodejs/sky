@@ -50,6 +50,7 @@ export default{
   },
   methods: {
     handleClick (event) {
+      event.stopPropagation()
       this.$emit('click', event)
     }
   }
