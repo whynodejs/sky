@@ -29,6 +29,9 @@
       background-color: @warning-hover;
     }
   }
+  &-load{
+    animation: load-loop 1s linear infinite;
+  }
   // error
   &-error{
     border: 1px solid @error;
@@ -53,6 +56,14 @@
     background-color: @text;
   }
   // text
+  &-text{
+    color: black;
+    border: 1px solid #fff;
+    background-color: #fff;
+    &:hover{
+      color: @focus;
+    }
+  }
   // disabled
   &-lg{
     padding: 10px 15px;
@@ -60,13 +71,22 @@
   }
   &-md{
     font-size: 0.9em;
-    padding: 7px 10px;
+    padding: 7px 12px;
     border-radius: 3px;
   }
   &-sm{
     font-size: 0.7em;
-    padding: 5px 7px;
+    padding: 5px 8px;
     border-radius: 2px;
   }
   outline: none; // 去除按钮点击时的边框
+}
+
+@keyframes load-loop{
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
