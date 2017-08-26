@@ -1,13 +1,13 @@
 <template>
   <button @click='handleClick' :class='classes' :disabled='disabled'>
-    <Icon v-if='loading' type='load-a'/>
+    <Icon v-if='loading' type='load-a' class='sky-button-load'/>
     <Icon v-else-if='icon' :type='icon'/>
     <slot>按钮</slot>
   </button>
 </template>
 <script>
 import Icon from '../Icon'
-const prefix = 'sky-ui-button'
+const prefix = 'sky-button'
 export default{
   name: 'Button',
   components: {Icon},
