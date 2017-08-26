@@ -1,12 +1,14 @@
 import Button from './components/Button'
 import Icon from './components/Icon'
 import Input from './components/Input'
+import Modal from './components/Modal'
 import './styles/index.less'
 
 let sky = {
   Button,
   Icon,
-  Input
+  Input,
+  Modal
 }
 
 const install = function (Vue) {

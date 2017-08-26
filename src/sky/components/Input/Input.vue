@@ -27,7 +27,7 @@
 </div>
 </template>
 <script>
-let prefix = 'sky-ui-'
+let prefix = 'sky-'
 import Icon from '../Icon'
 export default{
   name: 'Input',
