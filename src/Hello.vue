@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     handleClick (event) {
-      console.log(event.target.innerHTML)
+      this.$Modal.confirm({})
     }
   }
 }
