@@ -1,20 +1,20 @@
 <template>
   <transition name='fade'>
-    <div v-show='show' class='sky-modal-parent'>
-      <div class='sky-modal' v-clickOutSide='closeShadow'>
-        <div class='sky-modal-header'>
+    <div v-show='show' :class="[prefix + '-parent']">
+      <div :class='[prefix]' v-clickOutSide='closeShadow'>
+        <div :class="[prefix + '-header']" v-if='showHeader'>
             <slot name='header'>
-              <span class='sky-modal-title'>{{title}}</span>
-              <div class='sky-modal-close' v-if='showCloseBtn'
+              <span :class="[prefix + '-title']">{{title}}</span>
+              <div :class="[prefix + '-close']" v-if='showCloseBtn'
                    @click='closeModal'>
                 <Icon type='close'/>
               </div>
             </slot>
         </div>
-        <div class='sky-modal-content'>
+        <div :class="[prefix + '-content']">
           <slot></slot>
         </div>
-        <div class='sky-modal-footer'>
+        <div :class="[prefix + '-footer']" v-if='showFooter'>
           <slot name='footer'>
             <sButton type='text' @click='closeModal'>{{cancelText}}</sButton>
             &nbsp;
@@ -67,16 +67,23 @@ export default{
     loading: {
       type: Boolean,
       default: false
+    },
+    showFooter: {
+      type: Boolean,
+      default: true
+    },
+    showHeader: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
-    show () {
-      return this.value
-    }
   },
   data () {
     return {
-      load: false
+      load: false,
+      show: this.value,
+      prefix: 'sky-modal'
     }
   },
   methods: {
@@ -102,6 +109,7 @@ export default{
   },
   watch: {
     value:  function (seen) {
+      this.show = seen
       if (!seen) {
         //  弹出框关闭后清楚按钮的加载状态
         this.load = false
