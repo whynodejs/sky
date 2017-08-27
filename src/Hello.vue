@@ -1,7 +1,7 @@
 <template>
   <div>
-    <img src="./assets/logo.png">
     <Button @click='handleClick'>吴超</Button>
+    <Modal v-model='seen'/>
   </div>
 </template>
 
@@ -9,12 +9,17 @@
 export default {
   data () {
     return {
-      name: '姜传波'
+      name: '姜传波',
+      seen: true
     }
   },
   methods: {
     handleClick (event) {
-      this.$Modal.confirm({})
+      this.$Modal.error({
+        content: 'Hello',
+        onConfirm: () => {
+        }
+      })
     }
   }
 }
