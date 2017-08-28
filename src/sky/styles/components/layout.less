@@ -1,0 +1,49 @@
+// 移动设备
+@media (min-device-width: @screen-xs-min) {
+  .generate_layout(24, xs-);
+}
+// 平板设备
+@media (min-device-width: @screen-sm-min) {
+  .generate_layout(24, sm-);
+}
+// 普通显示器
+@media (min-device-width: @screen-md-min) {
+  .generate_layout(24, md-);
+}
+// 大型显示器
+@media (min-device-width: @screen-lg-min) {
+  .generate_layout(24, lg-);
+}
+// 自适应样式生成器
+.generate_layout(@n, @className, @i: 1) when (@i =< @n){
+  .@{sky}-col-span-@{className}@{i}{
+    float: left;
+    width: (@i * 100% / @n);
+  }
+  .generate_layout(@n, @className, (@i + 1))
+}
+
+// 普通栅格系统生成器
+.generate_grid(24);
+.generate_grid(@n, @i: 1) when (@i =< @n){
+  // 普通栅格
+  .@{sky}-col-span-@{i}{
+    float: left;
+    width: (@i * 100% / @n);
+  }
+  // 偏移量
+  .@{sky}-col-offset-@{i}{
+    margin-left: (@i * 100% / @n);
+  }
+  // push
+  .@{sky}-col-push-@{i}{
+    position: absolute;
+    left: (@i * 100% / @n);
+  }
+  // pull
+  .@{sky}-col-pull-@{i}{
+    position: absolute;
+    right: (@i * 100% / @n);
+  }
+  .generate_grid(@n, (@i + 1))
+}
