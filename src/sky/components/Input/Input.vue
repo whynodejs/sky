@@ -1,6 +1,10 @@
 <template>
 <div>
-  <div v-if='type != "textarea"'>
+  <div v-if='type != "textarea"' style='position: relative'>
+    <span v-if='icon && placement === "left"' @click='handleIconClick'
+          :class="[prefix + 'icon-left']">
+      <Icon :type='icon' :size='20'/>
+    </span>
     <input
           :class='classes'
           :type='type'
@@ -12,6 +16,10 @@
           @input='handleChange'
           @blur='handleBlur'
           @focus='handleFocus'/>
+    <span v-if='icon && placement === "right"' @click='handleIconClick'
+          :class="[prefix + 'icon-right']">
+      <Icon :type='icon' :size='20'/>
+    </span>
   </div>
   <div v-else>
     <textarea
@@ -27,7 +35,6 @@
 </div>
 </template>
 <script>
-let prefix = 'sky-'
 import Icon from '../Icon'
 export default{
   name: 'Input',
@@ -58,22 +65,26 @@ export default{
     icon: String,
     placement: {
       type: String,
-      default: 'front'
+      default: 'left'
     }
   },
   data () {
     return {
-      pre_value: this.value
+      pre_value: this.value,
+      prefix: 'sky-'
     }
   },
   computed: {
     classes () {
       // 区分输入框和输入域
-      let prefixClass = prefix + (this.type === 'textarea' ? 'textarea' : 'input')
+      let prefixClass = this.prefix + (this.type === 'textarea' ? 'textarea' : 'input')
       let classes = [`${prefixClass}`]
       // 是否不可操作
       if (this.disabled) {
         classes.push(`${prefixClass}-disabled`)
+      }
+      if (this.icon) {
+        classes.push(`${prefixClass}-${this.placement}`)
       }
       return classes
     }
@@ -101,6 +112,10 @@ export default{
         this.pre_value = value
       }
       this.$emit('input', this.pre_value)    
+    },
+    // 图标点击事件
+    handleIconClick (event) {
+      this.$emit('icon-click', event)
     }
   }
 }
