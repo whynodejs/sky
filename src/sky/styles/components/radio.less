@@ -36,6 +36,10 @@
     background-color: #fff;
     cursor: pointer;
     transition: border-color .2s ease-in-out,background-color .2s ease-in-out;
+    &-disabled{
+      cursor: not-allowed;
+      background-color: @disabled;
+    }
     &:after{
       content: '';
       display: table;
