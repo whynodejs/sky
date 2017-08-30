@@ -3,7 +3,7 @@
     <div class='sky-card-header' v-if='showHeader'>
       <slot name='header'></slot>
     </div>
-    <div class='sky-card-content'>
+    <div class='sky-card-content' v-if='showContent'>
       <slot name='content'></slot>
     </div>
     <slot></slot>
@@ -22,11 +22,14 @@ export default{
   },
   data () {
     return {
-      showHeader: false
+      showHeader: false,
+      showContent: false
     }
   },
   mounted () {
-
+    const slot = this.$slots
+    this.showHeader = slot['header'] !== undefined
+    this.showContent = slot['content'] !== undefined
   },
   computed: {
     wrapClass () {
