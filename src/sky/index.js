@@ -2,11 +2,12 @@ import Button from './components/Button'
 import Icon from './components/Icon'
 import Input from './components/Input'
 import Modal from './components/Modal'
+import {Row, Col} from './components/layout'
 import {CheckBox, CheckBoxGroup} from './components/CheckBox'
 import {Radio, RadioGroup} from './components/Radio'
 import SSwitch from './components/Switch'
 import Card from './components/Card'
-import {Row, Col} from './components/layout'
+import Rate from './components/Rate'
 import './styles/index.less'
 
 let sky = {
@@ -21,7 +22,8 @@ let sky = {
   Radio,
   RadioGroup,
   SSwitch,
-  Card
+  Card,
+  Rate
 }
 
 const install = function (Vue) {
