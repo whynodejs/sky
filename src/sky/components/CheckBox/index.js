@@ -1,2 +1,3 @@
 import CheckBox from './CheckBox'
-export default CheckBox
+import CheckBoxGroup from './CheckBoxGroup'
+export {CheckBox, CheckBoxGroup}

@@ -2,7 +2,7 @@ import Button from './components/Button'
 import Icon from './components/Icon'
 import Input from './components/Input'
 import Modal from './components/Modal'
-import CheckBox from './components/CheckBox'
+import {CheckBox, CheckBoxGroup} from './components/CheckBox'
 import {Radio, RadioGroup} from './components/Radio'
 import SSwitch from './components/Switch'
 import Card from './components/Card'
@@ -17,6 +17,7 @@ let sky = {
   Row,
   Col,
   CheckBox,
+  CheckBoxGroup,
   Radio,
   RadioGroup,
   SSwitch,
