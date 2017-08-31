@@ -8,6 +8,7 @@ import {Radio, RadioGroup} from './components/Radio'
 import SSwitch from './components/Switch'
 import Card from './components/Card'
 import Rate from './components/Rate'
+import Tree from './components/Tree'
 import './styles/index.less'
 
 let sky = {
@@ -23,7 +24,8 @@ let sky = {
   RadioGroup,
   SSwitch,
   Card,
-  Rate
+  Rate,
+  Tree
 }
 
 const install = function (Vue) {
