@@ -1,12 +1,28 @@
 <template>
-  <div :class='wrapClass' :style='styles'>
-    <div class='sky-card-header' v-if='showHeader'>
-      <slot name='header'></slot>
+  <div>
+    <!-- 普通Card -->
+    <div :class='wrapClass' :style='styles' v-if='!title'>
+      <!-- 头部 -->
+      <div class='sky-card-header' v-if='showHeader'>
+        <slot name='header'></slot>
+      </div>
+      <!-- 主体部分 -->
+      <div class='sky-card-content' v-if='showContent'>
+        <slot name='content'></slot>
+      </div>
+      <slot></slot>
     </div>
-    <div class='sky-card-content' v-if='showContent'>
-      <slot name='content'></slot>
-    </div>
-    <slot></slot>
+    <!-- 存在title时使用fieleset -->
+    <fieldset :class='wrapClass' :style='styles' v-else>
+      <legend>{{title}}</legend>
+      <div class='sky-card-header' v-if='showHeader'>
+        <slot name='header'></slot>
+      </div>
+      <div class='sky-card-content' v-if='showContent'>
+        <slot name='content'></slot>
+      </div>
+      <slot></slot>
+    </fieldset>
   </div>
 </template>
 <script>
@@ -18,7 +34,8 @@ export default{
       type: Boolean,
       default: true
     },
-    height: Number
+    height: Number,
+    title: String
   },
   data () {
     return {
