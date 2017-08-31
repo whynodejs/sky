@@ -1,12 +1,13 @@
 export default{
-	data () {
-		return {
-			analyze: true
-		}
-	},
-	methods: {
-		showMessage (name) {
-			console.log('Nice to meet you --' + name)
-		}
-	}
+  methods: {
+    findParentByName (current, parent) {
+      while (current.$parent) {
+        if (current.$parent.$options.name === parent) {
+          return current.$parent
+        } else {
+          current = current.$parent
+        }
+      }
+    }
+  }
 }
