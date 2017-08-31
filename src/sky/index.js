@@ -9,6 +9,7 @@ import SSwitch from './components/Switch'
 import Card from './components/Card'
 import Rate from './components/Rate'
 import Tree from './components/Tree'
+import {Tab, TabPanel} from './components/Tabs'
 import './styles/index.less'
 
 let sky = {
@@ -25,7 +26,9 @@ let sky = {
   SSwitch,
   Card,
   Rate,
-  Tree
+  Tree,
+  Tab,
+  TabPanel
 }
 
 const install = function (Vue) {
