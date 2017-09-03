@@ -13,12 +13,23 @@
     text-align: center;
     cursor: pointer;
     &-disabled{
-      cursor: none;
-      color: @disabled;
+      pointer-events: none;
+      cursor: default;
+      color: #ccc;
     }
-    &:hover{
+    &-active{
       color: @primary;
       border-bottom:2px solid @primary;
     }
+    &:hover{
+      color: @primary;
+    }
+  }
+  &-panel{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    transition: opacity .3s;
+    opacity: 1;
   }
 }
