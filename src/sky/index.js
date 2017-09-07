@@ -11,9 +11,11 @@ import Rate from './components/Rate'
 import Tree from './components/Tree'
 import {Tab, TabPanel} from './components/Tabs'
 import LoadingBar from './components/LoadingBar'
+import BackTop from './components/BackTop'
 import './styles/index.less'
 
 let sky = {
+  BackTop,
   Button,
   Icon,
   Input,
