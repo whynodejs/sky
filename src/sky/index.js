@@ -4,6 +4,7 @@ import Input from './components/Input'
 import Modal from './components/Modal'
 import {Row, Col} from './components/layout'
 import {CheckBox, CheckBoxGroup} from './components/CheckBox'
+import {Form, FormItem} from './components/Form'
 import {Radio, RadioGroup} from './components/Radio'
 import SSwitch from './components/Switch'
 import Card from './components/Card'
@@ -31,7 +32,9 @@ let sky = {
   Rate,
   Tree,
   Tab,
-  TabPanel
+  TabPanel,
+  Form,
+  FormItem
 }
 
 const install = function (Vue) {
